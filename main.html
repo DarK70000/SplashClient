@@ -1,196 +1,489 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rivals Client</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+<!-- Top Notification Banner -->
+<div class="bg-mocha-800 text-mocha-200 text-xs py-2 px-4 text-center font-medium border-b border-mocha-700/50">
+    <i class="fa-solid fa-bolt text-mocha-400 mr-2"></i> V2.4 Update Live: Enhanced bypass security & lightning-fast injection for Roblox Rivals!
+</div>
+
+<!-- Navigation Bar -->
+<header class="sticky top-0 z-40 glass-card border-b border-mocha-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+        <div class="flex items-center space-x-3">
+            <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-mocha-400 to-mocha-600 flex items-center justify-center mocha-glow text-white font-bold text-xl">
+                <i class="fa-solid fa-mug-hot"></i>
+            </div>
+            <div>
+                <span class="text-xl font-extrabold tracking-tight text-white">MOCHA</span>
+                <span class="text-xl font-light text-mocha-400">CLIENT</span>
+            </div>
+        </div>
+        
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-mocha-200">
+            <a href="#products" class="hover:text-mocha-400 transition">Products</a>
+            <a href="#features" class="hover:text-mocha-400 transition">Features</a>
+            <a href="#status" class="hover:text-mocha-400 transition">Status</a>
+            <a href="#faq" class="hover:text-mocha-400 transition">FAQ</a>
         </nav>
-    </header>
-    <main>
-        <section class="hero">
-            <h1>Rivals Client</h1>
-            <p>A custom Roblox Rivals client, built with love and care.</p>
-            <button class="buy-btn">Buy Now ($9.99)</button>
-        </section>
-        <section class="features">
-            <h2>Features</h2>
-            <ul>
-                <li>Custom UI</li>
-                <li>Optimized performance</li>
-                <li>Regular updates</li>
-            </ul>
-        </section>
-        <section class="testimonials">
-            <h2>What people are saying...</h2>
-            <blockquote>
-                "This client is amazing! The UI is so smooth and the features are top-notch." - John Doe
-            </blockquote>
-            <blockquote>
-                "I was skeptical at first, but this client has really improved my Rivals experience." - Jane Doe
-            </blockquote>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2023 Rivals Client. All rights reserved.</p>
-    </footer>
-    <script src="script.js"></script>
-</body>
-</html>
-```
-**styles.css**
-```css
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
-}
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-}
+        <div class="flex items-center space-x-4">
+            <a href="#products" class="bg-mocha-500 hover:bg-mocha-600 text-white px-5 py-2.5 rounded-xl font-semibold text-sm transition shadow-lg shadow-mocha-900/40 flex items-center space-x-2">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span>Store</span>
+            </a>
+        </div>
+    </div>
+</header>
 
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
+<!-- Hero Section -->
+<section class="relative pt-20 pb-28 overflow-hidden">
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-mocha-800/30 via-transparent to-transparent pointer-events-none"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="inline-flex items-center space-x-2 px-3 py-1 rounded-full bg-mocha-900/80 border border-mocha-700/50 text-mocha-300 text-xs font-semibold mb-6">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+            <span>All Systems Operational & Undetected</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight mb-6 max-w-4xl mx-auto leading-tight">
+            DOMINATE YOUR GAMES WITH <span class="text-transparent bg-clip-text bg-gradient-to-r from-mocha-300 via-mocha-400 to-mocha-500">MOCHA CLIENT</span>
+        </h1>
+        <p class="text-lg sm:text-xl text-mocha-200/80 max-w-2xl mx-auto mb-10 font-normal">
+            Engineered specifically for <strong class="text-white font-semibold">Roblox Rivals</strong>, Rust, Fortnite, GTA 5, and Rainbow Six Siege. Undetected features, high performance, and instant delivery.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <a href="#products" class="w-full sm:w-auto bg-mocha-500 hover:bg-mocha-600 text-white font-bold px-8 py-4 rounded-xl text-base transition mocha-glow flex items-center justify-center space-x-3">
+                <span>Explore Products</span>
+                <i class="fa-solid fa-arrow-down"></i>
+            </a>
+            <a href="#features" class="w-full sm:w-auto glass-card hover:bg-mocha-900/60 text-white font-bold px-8 py-4 rounded-xl text-base transition flex items-center justify-center space-x-3">
+                <i class="fa-solid fa-shield-halved text-mocha-400"></i>
+                <span>Why Choose Mocha?</span>
+            </a>
+        </div>
 
-nav li {
-    margin-right: 20px;
-}
+        <!-- Stats Bar -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto mt-20 pt-10 border-t border-mocha-800/60">
+            <div class="text-center">
+                <div class="text-3xl font-extrabold text-white mb-1">15,000+</div>
+                <div class="text-xs text-mocha-300 font-medium uppercase tracking-wider">Active Users</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-extrabold text-white mb-1">100%</div>
+                <div class="text-xs text-mocha-300 font-medium uppercase tracking-wider">Undetected Status</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-extrabold text-white mb-1">Instant</div>
+                <div class="text-xs text-mocha-300 font-medium uppercase tracking-wider">Key Delivery</div>
+            </div>
+            <div class="text-center">
+                <div class="text-3xl font-extrabold text-white mb-1">24/7</div>
+                <div class="text-xs text-mocha-300 font-medium uppercase tracking-wider">Support Team</div>
+            </div>
+        </div>
+    </div>
+</section>
 
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
+<!-- Products Store Section -->
+<section id="products" class="py-24 bg-mocha-950/40 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Choose Your Game Client</h2>
+            <p class="text-mocha-300 text-base">Select your weapon of choice. All keys grant instant lifetime access and automatic updates.</p>
+        </div>
 
-nav a:hover {
-    color: #ccc;
-}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <!-- Roblox Rivals Product -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 hover:border-mocha-400/50 relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-mocha-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Featured Rivals</div>
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-mocha-900 border border-mocha-700/50 flex items-center justify-center text-mocha-400 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-gamepad"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Roblox Rivals Client</h3>
+                    <p class="text-mocha-300 text-sm mb-6">Built specifically for Roblox Rivals. Custom aimbot, ESP, triggerbot, and unmatched movement utilities.</p>
+                    <ul class="space-y-3 text-sm text-mocha-200 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Custom Aimbot & FOV Circle</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Player ESP & Distance Check</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Bypass Anti-Cheat Protection</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-baseline justify-between mb-4">
+                        <span class="text-xs text-mocha-300 uppercase font-semibold">Lifetime Access</span>
+                        <span class="text-2xl font-extrabold text-white">£3.00</span>
+                    </div>
+                    <button onclick="openCheckout('Roblox Rivals Client', 3.00)" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-mocha-900/40 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Purchase Now</span>
+                    </button>
+                </div>
+            </div>
 
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-}
+            <!-- Rust Product -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 hover:border-mocha-400/50">
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-mocha-900 border border-mocha-700/50 flex items-center justify-center text-mocha-400 text-2xl mb-6">
+                        <i class="fa-solid fa-skull"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Rust Mocha Client</h3>
+                    <p class="text-mocha-300 text-sm mb-6">Dominate the monuments and raids with precision ESP, recoil compensation, and radar.</p>
+                    <ul class="space-y-3 text-sm text-mocha-200 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Advanced Recoil Control</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Ore, Base & Player ESP</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> EAC Bypass Guaranteed</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-baseline justify-between mb-4">
+                        <span class="text-xs text-mocha-300 uppercase font-semibold">Lifetime Access</span>
+                        <span class="text-2xl font-extrabold text-white">£4.50</span>
+                    </div>
+                    <button onclick="openCheckout('Rust Mocha Client', 4.50)" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-mocha-900/40 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Purchase Now</span>
+                    </button>
+                </div>
+            </div>
 
-.hero {
-    background-image: linear-gradient(to bottom, #333, #444);
-    background-size: 100% 300px;
-    background-position: 0 100%;
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
+            <!-- Fortnite Product -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 hover:border-mocha-400/50">
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-mocha-900 border border-mocha-700/50 flex items-center justify-center text-mocha-400 text-2xl mb-6">
+                        <i class="fa-solid fa-shield"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">Fortnite Mocha Client</h3>
+                    <p class="text-mocha-300 text-sm mb-6">Secure victory royales effortlessly with smooth aim assistance, item ESP, and radar.</p>
+                    <ul class="space-y-3 text-sm text-mocha-200 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Silent / Memory Aimbot</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Weapon & Loot ESP</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Fully Undetected & Safe</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-baseline justify-between mb-4">
+                        <span class="text-xs text-mocha-300 uppercase font-semibold">Lifetime Access</span>
+                        <span class="text-2xl font-extrabold text-white">£4.50</span>
+                    </div>
+                    <button onclick="openCheckout('Fortnite Mocha Client', 4.50)" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-mocha-900/40 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Purchase Now</span>
+                    </button>
+                </div>
+            </div>
 
-.hero h1 {
-    color: #fff;
-    font-size: 36px;
-    margin-bottom: 10px;
-}
+            <!-- GTA 5 Product -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 hover:border-mocha-400/50">
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-mocha-900 border border-mocha-700/50 flex items-center justify-center text-mocha-400 text-2xl mb-6">
+                        <i class="fa-solid fa-car-tunnel"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">GTA 5 Mocha Client</h3>
+                    <p class="text-mocha-300 text-sm mb-6">Rule Los Santos with comprehensive recovery options, mod menu controls, and vehicle spawning.</p>
+                    <ul class="space-y-3 text-sm text-mocha-200 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Safe Money & RP Options</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Comprehensive Mod Menu</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Online Protection Features</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-baseline justify-between mb-4">
+                        <span class="text-xs text-mocha-300 uppercase font-semibold">Lifetime Access</span>
+                        <span class="text-2xl font-extrabold text-white">£4.50</span>
+                    </div>
+                    <button onclick="openCheckout('GTA 5 Mocha Client', 4.50)" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-mocha-900/40 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Purchase Now</span>
+                    </button>
+                </div>
+            </div>
 
-.hero p {
-    color: #ccc;
-    font-size: 18px;
-    margin-bottom: 20px;
-}
+            <!-- Rainbow Six Siege Product -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 hover:border-mocha-400/50">
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-mocha-900 border border-mocha-700/50 flex items-center justify-center text-mocha-400 text-2xl mb-6">
+                        <i class="fa-solid fa-crosshairs"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">R6 Siege Mocha Client</h3>
+                    <p class="text-mocha-300 text-sm mb-6">Climb ranked leaderboards effortlessly with operator glow, gadget ESP, and recoil removal.</p>
+                    <ul class="space-y-3 text-sm text-mocha-200 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> Operator Glow & ESP</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> No Recoil / No Spread</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-mocha-400 mr-2.5"></i> BattlEye Bypass Included</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-baseline justify-between mb-4">
+                        <span class="text-xs text-mocha-300 uppercase font-semibold">Lifetime Access</span>
+                        <span class="text-2xl font-extrabold text-white">£4.50</span>
+                    </div>
+                    <button onclick="openCheckout('R6 Siege Mocha Client', 4.50)" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-mocha-900/40 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-cart-plus"></i>
+                        <span>Purchase Now</span>
+                    </button>
+                </div>
+            </div>
 
-.buy-btn {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 18px;
-    cursor: pointer;
-}
+            <!-- All-In-One Bundle Product -->
+            <div class="glass-card rounded-2xl p-6 flex flex-col justify-between transition hover:-translate-y-1 border-mocha-400/40 mocha-glow relative overflow-hidden group">
+                <div class="absolute top-0 right-0 bg-gradient-to-r from-amber-600 to-mocha-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Best Value</div>
+                <div>
+                    <div class="w-14 h-14 rounded-xl bg-mocha-800 border border-mocha-500/50 flex items-center justify-center text-mocha-300 text-2xl mb-6 group-hover:scale-110 transition">
+                        <i class="fa-solid fa-crown text-amber-400"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">All-In-One Bundle</h3>
+                    <p class="text-mocha-300 text-sm mb-6">Get lifetime access to ALL Mocha Clients (Roblox Rivals, Rust, Fortnite, GTA 5, and R6 Siege) at a massive discount.</p>
+                    <ul class="space-y-3 text-sm text-mocha-200 mb-8">
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> All 5 Game Clients Included</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> Priority 24/7 Support Channel</li>
+                        <li class="flex items-center"><i class="fa-solid fa-check text-amber-400 mr-2.5"></i> VIP Discord Role & Access</li>
+                    </ul>
+                </div>
+                <div>
+                    <div class="flex items-baseline justify-between mb-4">
+                        <span class="text-xs text-mocha-300 uppercase font-semibold">Ultimate Pass</span>
+                        <span class="text-2xl font-extrabold text-white">£7.00</span>
+                    </div>
+                    <button onclick="openCheckout('All-In-One Bundle', 7.00)" class="w-full bg-gradient-to-r from-amber-600 to-mocha-500 hover:from-amber-700 hover:to-mocha-600 text-white font-bold py-3 rounded-xl transition shadow-lg shadow-amber-900/30 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-crown"></i>
+                        <span>Get Bundle</span>
+                    </button>
+                </div>
+            </div>
 
-.buy-btn:hover {
-    background-color: #444;
-}
+        </div>
+    </div>
+</section>
 
-.features {
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin-top: 20px;
-}
+<!-- Features Section -->
+<section id="features" class="py-24 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Why Gamers Choose Mocha</h2>
+            <p class="text-mocha-300 text-base">We combine performance, safety, and ease of use into one streamlined loader.</p>
+        </div>
 
-.features h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-mocha-900 text-mocha-400 flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-shield-cat"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Undetected Protection</h3>
+                <p class="text-mocha-300 text-sm leading-relaxed">Our advanced custom loader incorporates randomized signatures and kernel-level bypasses to keep your account completely safe.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-mocha-900 text-mocha-400 flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-gauge-high"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Zero FPS Drop</h3>
+                <p class="text-mocha-300 text-sm leading-relaxed">Optimized down to the assembly level. Mocha Client runs invisibly in the background without affecting your frame rates or system latency.</p>
+            </div>
+            <div class="glass-card p-8 rounded-2xl">
+                <div class="w-12 h-12 rounded-xl bg-mocha-900 text-mocha-400 flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-bolt-lightning"></i>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3">Instant Automated Delivery</h3>
+                <p class="text-mocha-300 text-sm leading-relaxed">As soon as your payment via PayPal or Crypto is confirmed, your license key and loader download link are generated instantly.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-.features ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
+<!-- FAQ Section -->
+<section id="faq" class="py-24 bg-mocha-950/40">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4">Frequently Asked Questions</h2>
+            <p class="text-mocha-300 text-base">Got questions? We've got answers.</p>
+        </div>
 
-.features li {
-    margin-bottom: 10px;
-}
+        <div class="space-y-4">
+            <div class="glass-card rounded-xl p-6">
+                <h3 class="text-lg font-bold text-white mb-2">How do I receive my key after payment?</h3>
+                <p class="text-mocha-300 text-sm">Once your payment is processed through PayPal or Crypto, you will immediately see your unique license key on the success screen and receive an email backup.</p>
+            </div>
+            <div class="glass-card rounded-xl p-6">
+                <h3 class="text-lg font-bold text-white mb-2">Are the clients updated after game patches?</h3>
+                <p class="text-mocha-300 text-sm">Yes! Our development team pushes rapid updates within hours of any major game or anti-cheat update to ensure uninterrupted access.</p>
+            </div>
+            <div class="glass-card rounded-xl p-6">
+                <h3 class="text-lg font-bold text-white mb-2">What payment methods do you accept?</h3>
+                <p class="text-mocha-300 text-sm">We currently accept secure PayPal payments as well as major cryptocurrencies (Bitcoin, Ethereum, USDT, Litecoin) for anonymous and fast checkout.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-.testimonials {
-    background-color: #f2f2f2;
-    padding: 20px;
-    margin-top: 20px;
-}
+<!-- Footer -->
+<footer class="mt-auto border-t border-mocha-800/80 bg-mocha-950 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between text-mocha-400 text-sm">
+        <div class="flex items-center space-x-3 mb-4 md:mb-0">
+            <div class="w-8 h-8 rounded-lg bg-mocha-800 flex items-center justify-center text-white font-bold">
+                <i class="fa-solid fa-mug-hot text-xs"></i>
+            </div>
+            <span class="text-white font-bold">Mocha Client</span>
+            <span>© 2026 All rights reserved.</span>
+        </div>
+        <div class="flex space-x-6 text-xs">
+            <a href="#" class="hover:text-white transition">Privacy Policy</a>
+            <a href="#" class="hover:text-white transition">Terms of Service</a>
+            <a href="#" class="hover:text-white transition">Discord Support</a>
+        </div>
+    </div>
+</footer>
 
-.testimonials h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
+<!-- Interactive Checkout Modal -->
+<div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm hidden">
+    <div class="glass-card w-full max-w-md rounded-2xl p-6 sm:p-8 border border-mocha-500/30 relative mocha-glow-lg mx-4">
+        
+        <!-- Close Button -->
+        <button onclick="closeCheckout()" class="absolute top-4 right-4 text-mocha-400 hover:text-white text-xl">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
 
-.testimonials blockquote {
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 20px;
-}
+        <div id="modalStep1">
+            <div class="flex items-center space-x-3 mb-6">
+                <div class="w-10 h-10 rounded-xl bg-mocha-900 text-mocha-400 flex items-center justify-center text-lg">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+                <div>
+                    <h3 class="text-lg font-bold text-white" id="modalProductName">Product Name</h3>
+                    <p class="text-xs text-mocha-300">Lifetime License Key</p>
+                </div>
+            </div>
 
-.testimonials blockquote p {
-    color: #333;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
+            <div class="bg-mocha-900/60 rounded-xl p-4 mb-6 border border-mocha-800 flex items-center justify-between">
+                <span class="text-sm text-mocha-200">Total Price:</span>
+                <span class="text-xl font-extrabold text-white" id="modalProductPrice">£0.00</span>
+            </div>
 
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    clear: both;
-}
+            <label class="block text-xs font-semibold text-mocha-300 uppercase tracking-wider mb-2">Select Payment Method</label>
+            <div class="grid grid-cols-2 gap-4 mb-6">
+                <button type="button" onclick="selectPayment('paypal')" id="btnPaypal" class="payment-method-btn glass-card p-4 rounded-xl border border-mocha-500/40 hover:border-mocha-400 flex flex-col items-center justify-center space-y-2 transition">
+                    <i class="fa-brands fa-paypal text-2xl text-blue-400"></i>
+                    <span class="text-sm font-semibold text-white">PayPal</span>
+                </button>
+                <button type="button" onclick="selectPayment('crypto')" id="btnCrypto" class="payment-method-btn glass-card p-4 rounded-xl border border-mocha-800 hover:border-mocha-400 flex flex-col items-center justify-center space-y-2 transition">
+                    <i class="fa-solid fa-coins text-2xl text-amber-400"></i>
+                    <span class="text-sm font-semibold text-white">Crypto</span>
+                </button>
+            </div>
 
-footer p {
-    margin-bottom: 10px;
-}
-```
-**script.js**
-```javascript
-document.addEventListener("DOMContentLoaded", function() {
-    const buyBtn = document.querySelector(".buy-btn");
-    buyBtn.addEventListener("click", function() {
-        // Payment logic goes here
-        // For example:
-        // window.location.href = "https://www.example.com/pay";
+            <div id="cryptoOptions" class="hidden mb-6">
+                <label class="block text-xs font-semibold text-mocha-300 uppercase tracking-wider mb-2">Choose Cryptocurrency</label>
+                <select id="cryptoType" class="w-full bg-mocha-900 border border-mocha-700/60 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-mocha-400">
+                    <option value="BTC">Bitcoin (BTC)</option>
+                    <option value="ETH">Ethereum (ETH)</option>
+                    <option value="USDT">Tether (USDT - TRC20)</option>
+                    <option value="LTC">Litecoin (LTC)</option>
+                </select>
+            </div>
+
+            <button onclick="processPayment()" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3.5 rounded-xl transition shadow-lg shadow-mocha-900/40 flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-lock text-xs"></i>
+                <span id="payButtonText">Proceed to Secure Checkout</span>
+            </button>
+        </div>
+
+        <!-- Loading Step -->
+        <div id="modalStepLoading" class="text-center py-12 hidden">
+            <div class="inline-block w-12 h-12 border-4 border-mocha-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+            <h4 class="text-lg font-bold text-white mb-2">Generating Secure Invoice...</h4>
+            <p class="text-xs text-mocha-300">Please wait while we connect to the payment gateway.</p>
+        </div>
+
+        <!-- Success Step -->
+        <div id="modalStepSuccess" class="text-center py-6 hidden">
+            <div class="w-16 h-16 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border border-emerald-500/40">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h4 class="text-xl font-bold text-white mb-2">Order Confirmed!</h4>
+            <p class="text-xs text-mocha-300 mb-6">Your payment was simulated successfully. Here is your lifetime license key:</p>
+            
+            <div class="bg-mocha-900 p-3 rounded-xl border border-mocha-700 font-mono text-sm text-mocha-200 select-all mb-4 break-all" id="generatedKey">
+                MOCHA-RIVALS-9X87-B421-K992
+            </div>
+            
+            <button onclick="copyKey()" class="w-full bg-mocha-800 hover:bg-mocha-700 text-white font-semibold py-2.5 rounded-xl text-sm transition mb-4">
+                <i class="fa-solid fa-copy mr-2"></i> Copy License Key
+            </button>
+            
+            <button onclick="closeCheckout()" class="w-full bg-mocha-500 hover:bg-mocha-600 text-white font-bold py-3 rounded-xl text-sm transition">
+                Close & Download Loader
+            </button>
+        </div>
+
+    </div>
+</div>
+
+<!-- Script Handling Modal & Checkout Simulation -->
+<script>
+    let selectedProduct = '';
+    let selectedPrice = 0;
+    let chosenPaymentMethod = 'paypal';
+
+    function openCheckout(productName, price) {
+        selectedProduct = productName;
+        selectedPrice = price;
+        
+        document.getElementById('modalProductName').innerText = productName;
+        document.getElementById('modalProductPrice').innerText = '£' + price.toFixed(2);
+        
+        // Reset modal states
+        document.getElementById('modalStep1').classList.remove('hidden');
+        document.getElementById('modalStepLoading').classList.add('hidden');
+        document.getElementById('modalStepSuccess').classList.add('hidden');
+        
+        selectPayment('paypal');
+        
+        document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckout() {
+        document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function selectPayment(method) {
+        chosenPaymentMethod = method;
+        const btnPaypal = document.getElementById('btnPaypal');
+        const btnCrypto = document.getElementById('btnCrypto');
+        const cryptoOptions = document.getElementById('cryptoOptions');
+        const payButtonText = document.getElementById('payButtonText');
+
+        if (method === 'paypal') {
+            btnPaypal.className = 'payment-method-btn glass-card p-4 rounded-xl border border-mocha-400 flex flex-col items-center justify-center space-y-2 transition';
+            btnCrypto.className = 'payment-method-btn glass-card p-4 rounded-xl border border-mocha-800 hover:border-mocha-400 flex flex-col items-center justify-center space-y-2 transition';
+            cryptoOptions.classList.add('hidden');
+            payButtonText.innerText = 'Pay £' + selectedPrice.toFixed(2) + ' with PayPal';
+        } else {
+            btnCrypto.className = 'payment-method-btn glass-card p-4 rounded-xl border border-mocha-400 flex flex-col items-center justify-center space-y-2 transition';
+            btnPaypal.className = 'payment-method-btn glass-card p-4 rounded-xl border border-mocha-800 hover:border-mocha-400 flex flex-col items-center justify-center space-y-2 transition';
+            cryptoOptions.classList.remove('hidden');
+            payButtonText.innerText = 'Pay £' + selectedPrice.toFixed(2) + ' with Crypto';
+        }
+    }
+
+    function processPayment() {
+        document.getElementById('modalStep1').classList.add('hidden');
+        document.getElementById('modalStepLoading').classList.remove('hidden');
+
+        setTimeout(() => {
+            document.getElementById('modalStepLoading').classList.add('hidden');
+            document.getElementById('modalStepSuccess').classList.remove('hidden');
+            
+            // Generate random license key based on product
+            const randomPart = Math.random().toString(36).substring(2, 8).toUpperCase();
+            const prefix = selectedProduct.includes('Rivals') ? 'RIVALS' : selectedProduct.includes('Rust') ? 'RUST' : selectedProduct.includes('Fortnite') ? 'FORT' : selectedProduct.includes('GTA') ? 'GTA5' : selectedProduct.includes('R6') ? 'R6' : 'BUNDLE';
+            document.getElementById('generatedKey').innerText = `MOCHA-${prefix}-${randomPart}-2026-VIP`;
+        }, 2000);
+    }
+
+    function copyKey() {
+        const keyText = document.getElementById('generatedKey').innerText;
+        navigator.clipboard.writeText(keyText);
+        alert('License key copied to clipboard!');
+    }
+
+    // Close modal on escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeCheckout();
+        }
     });
-});
+</script>
