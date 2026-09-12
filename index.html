@@ -3,106 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My CV</title>
+<title>sxpq_ | CV</title>
 <style>
-  body {
-    background-color: #111;
-    color: #ddd;
-    font-family: Arial, Helvetica, sans-serif;
+  * {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background-color: #0a0a0a;
+    color: #eee;
+    font-family: Arial, Helvetica, sans-serif;
     padding: 20px;
-    line-height: 1.5;
+    line-height: 1.6;
   }
 
   .container {
     max-width: 800px;
     margin: 0 auto;
-    background-color: #1a1a1a;
+  }
+
+  /* Header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #222;
+    padding-bottom: 15px;
+    margin-bottom: 40px;
+  }
+
+  .logo {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: italic;
+    color: #fff;
+  }
+
+  .nav-links a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 13px;
+    margin-left: 15px;
     border: 1px solid #333;
-    padding: 25px;
+    padding: 6px 12px;
+    border-radius: 4px;
+    transition: 0.2s;
   }
 
-  h1 {
-    color: #fff;
-    margin: 0 0 5px 0;
-    font-size: 28px;
-  }
-
-  .subtitle {
-    color: #888;
-    margin-bottom: 25px;
-    font-size: 14px;
-  }
-
-  h2 {
-    color: #fff;
-    font-size: 18px;
-    border-bottom: 1px solid #333;
-    padding-bottom: 5px;
-    margin-top: 30px;
-  }
-
-  p {
-    color: #ccc;
-    font-size: 14px;
-  }
-
-  ul {
-    padding-left: 20px;
-  }
-
-  li {
-    margin-bottom: 6px;
-    font-size: 14px;
-    color: #ccc;
-  }
-
-  .server {
+  .nav-links a:hover {
     background-color: #222;
-    border: 1px solid #333;
-    padding: 12px;
+    color: #fff;
+  }
+
+  /* Hero */
+  .hero {
+    margin-bottom: 50px;
+  }
+
+  .hero-label {
+    font-size: 12px;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1;
+    margin-bottom: 5px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+    color: #888;
     margin-bottom: 15px;
   }
 
-  .server h3 {
-    margin: 0 0 5px 0;
-    color: #fff;
-    font-size: 16px;
-  }
-
-  .rank {
+  .hero p {
+    font-size: 15px;
     color: #aaa;
-    font-size: 13px;
+    max-width: 500px;
   }
 
-  img {
-    max-width: 100%;
-    border: 1px solid #333;
+  /* Sections */
+  .section {
+    margin-bottom: 40px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+    color: #fff;
+  }
+
+  .section-header .number {
+    font-size: 14px;
+    color: #666;
+    margin-right: 10px;
+  }
+
+  /* Server Cards */
+  .card {
+    background-color: #121212;
+    border: 1px solid #222;
+    border-radius: 8px;
+    display: flex;
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+
+  .card-img {
+    width: 180px;
+    background-color: #1a1a1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #222;
+    flex-shrink: 0;
+  }
+
+  .card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     display: block;
-    margin-top: 10px;
-    background-color: #000;
   }
 
-  .skills span {
-    display: inline-block;
-    background-color: #2a2a2a;
-    border: 1px solid #3a3a3a;
+  .card-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .card-title {
+    font-size: 20px;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .badge {
+    background-color: #222;
+    border: 1px solid #444;
     color: #ccc;
+    font-size: 11px;
     padding: 3px 8px;
-    margin: 3px 4px 3px 0;
-    font-size: 13px;
+    border-radius: 12px;
+    font-weight: bold;
+    white-space: nowrap;
   }
 
-  a {
-    color: #ddd;
+  .card-desc {
+    font-size: 14px;
+    color: #999;
+    margin-bottom: 15px;
   }
 
-  .footer {
-    margin-top: 35px;
-    border-top: 1px solid #333;
-    padding-top: 10px;
+  .card-footer {
     font-size: 12px;
     color: #666;
+    display: flex;
+    gap: 10px;
+  }
+
+  /* Skills / About */
+  .skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+
+  .skills-list span {
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    color: #aaa;
+    padding: 4px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+  }
+
+  .about-text p {
+    font-size: 14px;
+    color: #aaa;
+    margin-bottom: 10px;
+  }
+
+  /* Contact */
+  .contact-list {
+    list-style: none;
+    font-size: 14px;
+  }
+
+  .contact-list li {
+    margin-bottom: 8px;
+    color: #aaa;
+  }
+
+  .contact-list a {
+    color: #ddd;
+    text-decoration: none;
+    border-bottom: 1px dashed #555;
+  }
+
+  .contact-list a:hover {
+    color: #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+  /* Footer */
+  .footer {
+    border-top: 1px solid #222;
+    padding-top: 20px;
+    font-size: 12px;
+    color: #555;
+    text-align: center;
   }
 </style>
 </head>
@@ -110,59 +244,113 @@
 
 <div class="container">
 
-  <h1>YourName</h1>
-  <div class="subtitle">Minecraft Server Moderator &amp; Beginner Developer</div>
+  <!-- Header -->
+  <header>
+    <div class="logo">sxpq_</div>
+    <div class="nav-links">
+      <a href="#about">About me</a>
+      <a href="#socials">Socials ↗</a>
+    </div>
+  </header>
 
-  <h2>About Me</h2>
-  <p>
-    Hey, I'm a moderator on a couple of Minecraft FFA servers. I'm also learning
-    to develop stuff — mostly Skript and Java for Minecraft, plus a bit of Python.
-    Still pretty new to all of it but I'm working on it.
-  </p>
-
-  <h2>Servers I Moderate</h2>
-
-  <div class="server">
-    <h3>PigFFA</h3>
-    <div class="rank">Rank: Jr.Helper (currently) — was previously SS'er</div>
-    <p>I help out with player reports, chat moderation and general staff stuff.</p>
-    <img src="pigffa.png" alt="PigFFA screenshot">
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-label">Minecraft server management</div>
+    <h1>SXPQ</h1>
+    <div class="hero-sub">(sxpq_)</div>
+    <p>Projects, communities and server roles.</p>
   </div>
 
-  <div class="server">
-    <h3>TestFFA</h3>
-    <div class="rank">Rank: Jr.Helper</div>
-    <p>Same kind of thing here — moderating chat, handling reports, helping players.</p>
-    <img src="testffa.png" alt="TestFFA screenshot">
+  <!-- Main Servers -->
+  <div class="section">
+    <div class="section-header">
+      <div>
+        <span class="number">01</span>
+        <h2>Main servers</h2>
+      </div>
+    </div>
+
+    <!-- Card 1: Test FFA -->
+    <div class="card">
+      <div class="card-img">
+        <!-- Replace with your actual image URL -->
+        <img src="testffa.png" alt="Test FFA">
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <div class="card-title">Test FFA</div>
+          <div class="badge">Jr. Helper</div>
+        </div>
+        <div class="card-desc">
+          FFA server built around a clean, fair experience without pay-to-win progression.
+        </div>
+        <div class="card-footer">
+          Moderator
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2: Pig FFA -->
+    <div class="card">
+      <div class="card-img">
+        <!-- Replace with your actual image URL -->
+        <img src="pigffa.png" alt="Pig FFA">
+      </div>
+      <div class="card-content">
+        <div class="card-top">
+          <div class="card-title">Pig FFA</div>
+          <div class="badge">Jr. Helper (Ex SS'er)</div>
+        </div>
+        <div class="card-desc">
+          Large FFA community based on spearmace / dia smp.
+        </div>
+        <div class="card-footer">
+          7K+ Discord members
+        </div>
+      </div>
+    </div>
   </div>
 
-  <h2>What I'm Learning</h2>
-  <div class="skills">
-    <span>Skript</span>
-    <span>Java (beginner)</span>
-    <span>Python</span>
-    <span>Minecraft Plugin Basics</span>
-    <span>Server Moderation</span>
+  <!-- About / Skills -->
+  <div class="section" id="about">
+    <div class="section-header">
+      <div>
+        <span class="number">02</span>
+        <h2>About me</h2>
+      </div>
+    </div>
+    <div class="about-text">
+      <p>
+        I'm a moderator on Test FFA and Pig FFA. I'm also learning to develop stuff — 
+        mostly Skript and Java for Minecraft, plus a bit of Python.
+        Still pretty new to all of it but I'm working on it.
+      </p>
+      <div class="skills-list">
+        <span>Skript</span>
+        <span>Java (beginner)</span>
+        <span>Python</span>
+        <span>Minecraft Plugin Basics</span>
+        <span>Server Moderation</span>
+      </div>
+    </div>
   </div>
-  <p>
-    I've been messing around with Skript the most since it's easier to get into.
-    Java I'm still figuring out — classes and stuff are confusing but I'm getting there.
-    Python I use for small scripts and random things.
-  </p>
 
-  <h2>Stuff I've Made / Am Making</h2>
-  <ul>
-    <li>Small Skripts for FFA servers (kits, custom messages, simple commands)</li>
-    <li>Practising Java by following tutorials and trying to make basic plugins</li>
-    <li>Random Python scripts when I need something done</li>
-  </ul>
+  <!-- Contact -->
+  <div class="section" id="socials">
+    <div class="section-header">
+      <div>
+        <span class="number">03</span>
+        <h2>Contact</h2>
+      </div>
+    </div>
+    <ul class="contact-list">
+      <li>Guns.lol: <a href="https://guns.lol/sxpq106" target="_blank">guns.lol/sxpq106</a></li>
+      <li>Discord: <a href="#">sxpq_</a></li>
+      <li>Email: <a href="mailto:sxpqdev@gmail.com">sxpqdev@gmail.com</a></li>
+    </ul>
+  </div>
 
-  <h2>Contact</h2>
-  <p>
-    Discord: yourdiscord<br>
-    GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a>
-  </p>
-
+  <!-- Footer -->
   <div class="footer">
     Made with plain HTML because I'm still learning.
   </div>
