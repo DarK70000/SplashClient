@@ -1,299 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mocha Client — Roblox Rivals</title>
-  <meta name="description" content="Mocha Client — a polished client website for Roblox Rivals.">
-  <style>
-    :root{
-      --bg:#17110f;
-      --panel:#211714;
-      --panel2:#2b1d19;
-      --mocha:#8b5e4a;
-      --mocha2:#b98569;
-      --cream:#f4e5d7;
-      --muted:#bda99d;
-      --line:rgba(244,229,215,.10);
-      --shadow:0 20px 70px rgba(0,0,0,.38);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
-      margin:0;
-      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-      color:var(--cream);
-      background:
-        radial-gradient(circle at 15% 0%,rgba(139,94,74,.20),transparent 32%),
-        radial-gradient(circle at 90% 20%,rgba(185,133,105,.10),transparent 28%),
-        var(--bg);
-      line-height:1.6;
-    }
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1120px,92%);margin:auto}
-    nav{
-      position:sticky;top:0;z-index:20;
-      backdrop-filter:blur(16px);
-      background:rgba(23,17,15,.78);
-      border-bottom:1px solid var(--line);
-    }
-    .nav-inner{height:72px;display:flex;align-items:center;justify-content:space-between}
-    .brand{display:flex;align-items:center;gap:11px;font-weight:900;letter-spacing:.4px}
-    .logo{
-      width:38px;height:38px;border-radius:11px;
-      display:grid;place-items:center;
-      background:linear-gradient(135deg,var(--mocha2),var(--mocha));
-      box-shadow:0 8px 25px rgba(139,94,74,.28);
-      font-size:18px;
-    }
-    .links{display:flex;gap:25px;color:var(--muted);font-size:14px}
-    .links a:hover{color:var(--cream)}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:12px 18px;border-radius:10px;border:1px solid var(--line);
-      background:var(--panel2);font-weight:800;font-size:14px;
-      transition:.2s ease;cursor:pointer;
-    }
-    .btn:hover{transform:translateY(-2px);border-color:rgba(185,133,105,.45)}
-    .btn.primary{
-      border:0;color:#fff;
-      background:linear-gradient(135deg,#9e6b55,#704939);
-      box-shadow:0 12px 35px rgba(112,73,57,.35);
-    }
-    .hero{padding:110px 0 80px;text-align:center}
-    .badge{
-      display:inline-flex;padding:7px 12px;border:1px solid rgba(185,133,105,.28);
-      background:rgba(139,94,74,.09);border-radius:999px;color:var(--mocha2);
-      font-size:12px;font-weight:800;letter-spacing:.5px;
-    }
-    h1{font-size:clamp(48px,8vw,88px);line-height:.98;margin:22px 0 18px;letter-spacing:-4px}
-    .accent{color:var(--mocha2)}
-    .hero p{max-width:680px;margin:0 auto 30px;color:var(--muted);font-size:18px}
-    .actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-    section{padding:78px 0}
-    .section-head{margin-bottom:32px}
-    .section-head h2{font-size:34px;margin:0 0 8px;letter-spacing:-1px}
-    .section-head p{margin:0;color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{
-      background:linear-gradient(180deg,rgba(43,29,25,.90),rgba(33,23,20,.90));
-      border:1px solid var(--line);border-radius:16px;padding:25px;
-      box-shadow:var(--shadow);
-    }
-    .icon{
-      width:44px;height:44px;border-radius:12px;display:grid;place-items:center;
-      background:rgba(139,94,74,.16);color:var(--mocha2);font-weight:900;margin-bottom:16px
-    }
-    .card h3{margin:0 0 7px;font-size:18px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .price-card{position:relative}
-    .popular{
-      position:absolute;right:18px;top:18px;padding:5px 9px;border-radius:999px;
-      background:rgba(185,133,105,.16);color:var(--mocha2);font-size:11px;font-weight:900
-    }
-    .price{font-size:40px;font-weight:900;letter-spacing:-1px;margin:15px 0}
-    .price span{font-size:13px;color:var(--muted);font-weight:500}
-    ul{padding:0;margin:20px 0 24px;list-style:none}
-    li{padding:8px 0;color:var(--muted);font-size:14px}
-    li::before{content:"✓";color:var(--mocha2);font-weight:900;margin-right:9px}
-    .wide{
-      display:grid;grid-template-columns:1.3fr .7fr;gap:18px;align-items:stretch
-    }
-    .download{
-      min-height:230px;display:flex;flex-direction:column;justify-content:center;
-      background:linear-gradient(135deg,rgba(139,94,74,.22),rgba(43,29,25,.92));
-    }
-    .status{display:flex;align-items:center;gap:9px;color:#cbbfb7;font-size:13px}
-    .dot{width:8px;height:8px;border-radius:50%;background:#9fbe8c;box-shadow:0 0 12px #9fbe8c}
-    footer{border-top:1px solid var(--line);padding:30px 0;color:#88766c;font-size:12px}
-    .modal{
-      position:fixed;inset:0;background:rgba(0,0,0,.72);display:none;
-      place-items:center;padding:20px;z-index:50
-    }
-    .modal.show{display:grid}
-    .modal-box{
-      width:min(460px,100%);background:#211714;border:1px solid var(--line);
-      border-radius:18px;padding:28px;box-shadow:var(--shadow)
-    }
-    .modal-box h3{margin-top:0}
-    .field{margin:14px 0}
-    .field label{display:block;font-size:12px;color:var(--muted);margin-bottom:6px}
-    .field input,.field select{
-      width:100%;padding:12px;border-radius:9px;border:1px solid var(--line);
-      background:#17110f;color:var(--cream);outline:none
-    }
-    .modal-actions{display:flex;gap:10px;margin-top:20px}
-    @media(max-width:800px){
-      .links{display:none}
-      .grid,.pricing,.wide{grid-template-columns:1fr}
-      .hero{padding-top:75px}
-      h1{letter-spacing:-2px}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My CV</title>
+<style>
+  body {
+    background-color: #111;
+    color: #ddd;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.5;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 25px;
+  }
+
+  h1 {
+    color: #fff;
+    margin: 0 0 5px 0;
+    font-size: 28px;
+  }
+
+  .subtitle {
+    color: #888;
+    margin-bottom: 25px;
+    font-size: 14px;
+  }
+
+  h2 {
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    margin-top: 30px;
+  }
+
+  p {
+    color: #ccc;
+    font-size: 14px;
+  }
+
+  ul {
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 6px;
+    font-size: 14px;
+    color: #ccc;
+  }
+
+  .server {
+    background-color: #222;
+    border: 1px solid #333;
+    padding: 12px;
+    margin-bottom: 15px;
+  }
+
+  .server h3 {
+    margin: 0 0 5px 0;
+    color: #fff;
+    font-size: 16px;
+  }
+
+  .rank {
+    color: #aaa;
+    font-size: 13px;
+  }
+
+  img {
+    max-width: 100%;
+    border: 1px solid #333;
+    display: block;
+    margin-top: 10px;
+    background-color: #000;
+  }
+
+  .skills span {
+    display: inline-block;
+    background-color: #2a2a2a;
+    border: 1px solid #3a3a3a;
+    color: #ccc;
+    padding: 3px 8px;
+    margin: 3px 4px 3px 0;
+    font-size: 13px;
+  }
+
+  a {
+    color: #ddd;
+  }
+
+  .footer {
+    margin-top: 35px;
+    border-top: 1px solid #333;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #666;
+  }
+</style>
 </head>
 <body>
-  <nav>
-    <div class="container nav-inner">
-      <a class="brand" href="#home"><span class="logo">M</span> Mocha Client</a>
-      <div class="links">
-        <a href="#features">Features</a>
-        <a href="#pricing">Pricing</a>
-        <a href="#download">Download</a>
-      </div>
-      <a class="btn primary" href="#pricing">Get Client</a>
-    </div>
-  </nav>
 
-  <main id="home">
-    <section class="hero">
-      <div class="container">
-        <span class="badge">BUILT FOR ROBLOX RIVALS</span>
-        <h1>Play smarter.<br><span class="accent">Play Mocha.</span></h1>
-        <p>A clean, fast and customizable Roblox Rivals client with a warm mocha aesthetic. Built for players who want a polished experience.</p>
-        <div class="actions">
-          <a class="btn primary" href="#pricing">View Plans</a>
-          <a class="btn" href="#features">Explore Features</a>
-        </div>
-      </div>
-    </section>
+<div class="container">
 
-    <section id="features">
-      <div class="container">
-        <div class="section-head">
-          <h2>Made for Rivals.</h2>
-          <p>Everything you need for a smooth client experience.</p>
-        </div>
-        <div class="grid">
-          <article class="card">
-            <div class="icon">⚡</div>
-            <h3>Performance First</h3>
-            <p>Lightweight design focused on quick startup and a responsive in-game experience.</p>
-          </article>
-          <article class="card">
-            <div class="icon">✦</div>
-            <h3>Mocha UI</h3>
-            <p>Dark brown tones, soft highlights and a minimal interface that stays easy on the eyes.</p>
-          </article>
-          <article class="card">
-            <div class="icon">⚙</div>
-            <h3>Customizable</h3>
-            <p>Organize your client settings and tailor the experience to your preferred setup.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+  <h1>YourName</h1>
+  <div class="subtitle">Minecraft Server Moderator &amp; Beginner Developer</div>
 
-    <section id="pricing">
-      <div class="container">
-        <div class="section-head">
-          <h2>Choose your plan.</h2>
-          <p>Example storefront UI — connect the buttons to your real payment provider before selling.</p>
-        </div>
-        <div class="pricing">
-          <article class="card price-card">
-            <h3>Starter</h3>
-            <div class="price">$4.99 <span>/ month</span></div>
-            <ul><li>Core client</li><li>Mocha theme</li><li>Basic settings</li></ul>
-            <button class="btn primary buy" data-plan="Starter — $4.99/month">Purchase</button>
-          </article>
-          <article class="card price-card">
-            <span class="popular">POPULAR</span>
-            <h3>Pro</h3>
-            <div class="price">$9.99 <span>/ month</span></div>
-            <ul><li>Everything in Starter</li><li>Advanced settings</li><li>Priority updates</li></ul>
-            <button class="btn primary buy" data-plan="Pro — $9.99/month">Purchase</button>
-          </article>
-          <article class="card price-card">
-            <h3>Lifetime</h3>
-            <div class="price">$39.99 <span>/ once</span></div>
-            <ul><li>Full client access</li><li>Lifetime updates</li><li>Priority support</li></ul>
-            <button class="btn primary buy" data-plan="Lifetime — $39.99">Purchase</button>
-          </article>
-        </div>
-      </div>
-    </section>
+  <h2>About Me</h2>
+  <p>
+    Hey, I'm a moderator on a couple of Minecraft FFA servers. I'm also learning
+    to develop stuff — mostly Skript and Java for Minecraft, plus a bit of Python.
+    Still pretty new to all of it but I'm working on it.
+  </p>
 
-    <section id="download">
-      <div class="container wide">
-        <div class="card download">
-          <div class="status"><span class="dot"></span> Client website online</div>
-          <h2>Ready to launch?</h2>
-          <p style="color:var(--muted)">Replace the demo purchase flow with Stripe, PayPal, Sellix, Lemon Squeezy, or another payment provider, then connect your real download/license system.</p>
-          <div><a class="btn primary" href="#" id="downloadBtn">Download Client</a></div>
-        </div>
-        <div class="card">
-          <h3>Mocha Client</h3>
-          <p>Roblox Rivals-focused client landing page.</p>
-          <hr style="border:0;border-top:1px solid var(--line);margin:20px 0">
-          <p><strong>Version</strong><br>1.0.0</p>
-          <p><strong>Theme</strong><br>Mocha / Dark</p>
-        </div>
-      </div>
-    </section>
-  </main>
+  <h2>Servers I Moderate</h2>
 
-  <footer>
-    <div class="container">© 2026 Mocha Client. Roblox and Rivals are trademarks of Roblox Corporation. This site is not affiliated with Roblox Corporation.</div>
-  </footer>
-
-  <div class="modal" id="modal">
-    <div class="modal-box">
-      <h3>Purchase <span id="selectedPlan"></span></h3>
-      <p style="color:var(--muted);font-size:14px">Pay securely through PayPal. Replace the demo checkout action with your PayPal checkout link or PayPal integration.</p>
-      <div class="field">
-        <label>Email</label>
-        <input type="email" id="email" placeholder="you@example.com">
-      </div>
-      <div class="field">
-        <label>Payment provider</label>
-        <div style="padding:12px;border-radius:9px;border:1px solid var(--line);background:#17110f;color:var(--cream);font-weight:800;">
-          PayPal
-        </div>
-      </div>
-      <div class="modal-actions">
-        <button class="btn" id="close">Cancel</button>
-        <button class="btn primary" id="checkout">Continue to Checkout</button>
-      </div>
-    </div>
+  <div class="server">
+    <h3>PigFFA</h3>
+    <div class="rank">Rank: Jr.Helper (currently) — was previously SS'er</div>
+    <p>I help out with player reports, chat moderation and general staff stuff.</p>
+    <img src="pigffa.png" alt="PigFFA screenshot">
   </div>
 
-  <script>
-    const modal = document.getElementById("modal");
-    const selectedPlan = document.getElementById("selectedPlan");
+  <div class="server">
+    <h3>TestFFA</h3>
+    <div class="rank">Rank: Jr.Helper</div>
+    <p>Same kind of thing here — moderating chat, handling reports, helping players.</p>
+    <img src="testffa.png" alt="TestFFA screenshot">
+  </div>
 
-    document.querySelectorAll(".buy").forEach(button => {
-      button.addEventListener("click", () => {
-        selectedPlan.textContent = button.dataset.plan;
-        modal.classList.add("show");
-      });
-    });
+  <h2>What I'm Learning</h2>
+  <div class="skills">
+    <span>Skript</span>
+    <span>Java (beginner)</span>
+    <span>Python</span>
+    <span>Minecraft Plugin Basics</span>
+    <span>Server Moderation</span>
+  </div>
+  <p>
+    I've been messing around with Skript the most since it's easier to get into.
+    Java I'm still figuring out — classes and stuff are confusing but I'm getting there.
+    Python I use for small scripts and random things.
+  </p>
 
-    document.getElementById("close").onclick = () => modal.classList.remove("show");
+  <h2>Stuff I've Made / Am Making</h2>
+  <ul>
+    <li>Small Skripts for FFA servers (kits, custom messages, simple commands)</li>
+    <li>Practising Java by following tutorials and trying to make basic plugins</li>
+    <li>Random Python scripts when I need something done</li>
+  </ul>
 
-    modal.addEventListener("click", e => {
-      if (e.target === modal) modal.classList.remove("show");
-    });
+  <h2>Contact</h2>
+  <p>
+    Discord: yourdiscord<br>
+    GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a>
+  </p>
 
-    document.getElementById("checkout").onclick = () => {
-      const email = document.getElementById("email").value.trim();
-      if (!email) {
-        alert("Please enter your email first.");
-        return;
-      }
+  <div class="footer">
+    Made with plain HTML because I'm still learning.
+  </div>
 
-      // IMPORTANT:
-      // Replace this with your real PayPal checkout URL for the selected plan.
-      // Example:
-      // window.location.href = "https://www.paypal.com/checkoutnow?token=YOUR_TOKEN";
-      alert("PayPal checkout is ready to connect for " + selectedPlan.textContent +
-            ". Add your PayPal checkout link here.");
-    };
+</div>
 
-    document.getElementById("downloadBtn").onclick = e => {
-      e.preventDefault();
-      alert("Add your real client download URL to the #downloadBtn link in this HTML.");
-    };
-  </script>
 </body>
 </html>
